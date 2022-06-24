@@ -36,7 +36,7 @@ No uso privado administrativo, só terá acesso perfis com a função "admin" no
 - Deploy Netlify.
 - O projeto foi editado no Visual Studio Code.
 
-## [Demo]() "Em Breve"
+## [Demo](https://authentication-react-wd.netlify.app)
 
 # Para utilizar demonstração:
 
