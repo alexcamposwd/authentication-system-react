@@ -6,7 +6,7 @@ export default createGlobalStyle`
 		padding: 0;
 		outline: 0;
 		box-sizing: border-box;
-		max-width: 1720px;
+		max-width: 1920px;
 		margin: 0 auto;
 	}
 	::after,
@@ -22,8 +22,8 @@ export default createGlobalStyle`
 		text-decoration: none;
 	}
 	body {
-		overflow-x: hidden;
-		min-width: 360px;
+		overflow: hidden;
+		min-width: 320px;
 		font-family: "Roboto", sans-serif;
 	}
 `

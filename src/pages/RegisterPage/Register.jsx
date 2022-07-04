@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { api } from '../../services/api'
+import Background from '../../components/Background'
 import * as S from './styled'
 
 const RegisterPage = () => {
@@ -11,6 +12,10 @@ const RegisterPage = () => {
   const [isSucess, setIsSucess] = useState(false)
   const [messages, setMessages] = useState()
   const regExpEmail = /^(\w+)@[a-z]+(\.[a-z]+){1,2}$/i
+
+  const img_link =
+    'https://images.unsplash.com/photo-1655047273143-91261102716f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
+  const blurN = 25
 
   const registerSchema = yup.object().shape({
     username: yup
@@ -62,6 +67,7 @@ const RegisterPage = () => {
 
   return (
     <S.Register>
+      <Background imgUrl={img_link} blur={blurN} />
       <S.WrapperForm data-cy='wapper-createUser'>
         <form onSubmit={handleSubmit(createUser)}>
           <h1>Create New User</h1>
@@ -129,9 +135,9 @@ const RegisterPage = () => {
             <p>
               Already registered?
               <br />
-              <span className='line'>
+              <h3>
                 <Link to='/login'>Sign In</Link>
-              </span>
+              </h3>
             </p>
           </S.FieldButton>
 

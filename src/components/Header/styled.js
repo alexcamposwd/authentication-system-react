@@ -6,7 +6,7 @@ export const Header = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  min-width: 360px ;
+  min-width: 320px ;
   height: 50px;
   background: ${(props) => props.theme.colors.sand};
   align-items: center;

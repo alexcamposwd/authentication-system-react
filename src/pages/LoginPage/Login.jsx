@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { api } from '../../services/api'
 import { useAuth } from '../../contexts/AuthContext'
+import Background from '../../components/Background'
 import * as S from './styled'
 
 const LoginPage = () => {
@@ -14,11 +15,15 @@ const LoginPage = () => {
   const { setAuth } = useAuth()
   const regExpEmail = /^(\w+)@[a-z]+(\.[a-z]+){1,2}$/i
 
+  const img_link =
+    'https://images.unsplash.com/photo-1655047273143-91261102716f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
+  const blurN = 15
+
   const loginSchema = yup.object().shape({
-    email: yup.string().matches(
-      regExpEmail,
-      'Invalid email address',
-      ).required('Email is required'),
+    email: yup
+      .string()
+      .matches(regExpEmail, 'Invalid email address')
+      .required('Email is required'),
     password: yup
       .string()
       .min(5, 'Password must contain at least 5 characters')
@@ -67,6 +72,7 @@ const LoginPage = () => {
 
   return (
     <S.Login>
+      <Background imgUrl={img_link} blur={blurN} />
       <S.WrapperForm data-cy='wapper-loginUser'>
         <form onSubmit={handleSubmit(loginUser)}>
           <h1>Login User</h1>
@@ -96,7 +102,9 @@ const LoginPage = () => {
             {...register('password', { required: true })}
           />
           {errors?.password && (
-            <span data-cy='error-password-loginUser'>{errors.password.message}</span>
+            <span data-cy='error-password-loginUser'>
+              {errors.password.message}
+            </span>
           )}
 
           <S.FieldButton>
@@ -104,9 +112,9 @@ const LoginPage = () => {
             <p>
               Need an Account?
               <br />
-              <span className='line'>
+              <h3>
                 <Link to='/register'>Sign Up</Link>
-              </span>
+              </h3>
             </p>
           </S.FieldButton>
 

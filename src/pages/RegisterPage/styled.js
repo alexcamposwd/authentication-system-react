@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Register = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,15 +13,16 @@ export const WrapperForm = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 200;
   
   form {
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-width: 600px;
-    background: ${(props) => props.theme.colors.sand};
-    padding: 30px;
-    margin-top: 40px;
+    max-width: 500px;
+    border: 2px solid ${(props) => props.theme.colors.sandgold};
+    padding: 50px 30px;
+    margin-top: 60px;
     border-radius: 10px;
 
     h1 {
@@ -28,7 +30,7 @@ export const WrapperForm = styled.div`
       font-weight: 600;
       text-transform: uppercase;
       text-align: center;
-      color: ${(props) => props.theme.colors.grey3};
+      color: ${(props) => props.theme.colors.sandgold};
     }
     
     label {
@@ -36,7 +38,7 @@ export const WrapperForm = styled.div`
       font-size: 14px;
       font-weight: 500;
       padding: 15px 0px 6px 0px;
-      color: ${(props) => props.theme.colors.grey3};
+      color: ${(props) => props.theme.colors.sandgold};
     }
 
     input,
@@ -47,6 +49,7 @@ export const WrapperForm = styled.div`
       padding: 10px;
       border: 0;
       outline: 0;
+      border-bottom: 2px solid ${(props) => props.theme.colors.sandgold};
       cursor: pointer;
     }
 
@@ -124,18 +127,19 @@ export const FieldButton = styled.div`
     text-align: justify;
     text-transform: lowercase;
     margin-top: 10px;
+    color: ${(props) => props.theme.colors.gold};
 
-    span {
+    h3 {
       height: 15px;
       font-weight: 600;
       text-transform: capitalize;
 
       a {
-        color: ${(props) => props.theme.colors.grey2};
+        color: ${(props) => props.theme.colors.sandgold};
       }
       
       a:hover {
-        color: ${(props) => props.theme.colors.gold};
+        color: ${(props) => props.theme.colors.grey2};
       }
     }
   }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { api } from '../../services/api'
 import { useAuth } from '../../contexts/AuthContext'
+import Background from '../../components/Background'
 import * as S from './styled'
 
 const UserPage = () => {
@@ -9,6 +10,10 @@ const UserPage = () => {
   const { id } = useParams()
   const { auth, logout } = useAuth()
   const [userLog, setUserLog] = useState()
+
+  const img_link =
+    'https://images.unsplash.com/photo-1559654663-0a9e41db6e86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=968&q=80'
+  const blurN = 28
 
   useEffect(() => {
     async function getUser() {
@@ -70,6 +75,7 @@ const UserPage = () => {
 
   return (
     <S.User>
+      <Background imgUrl={img_link} blur={blurN} />
       <S.Field>
         <h3>
           Username: <span>{userLog.user.username}</span>
