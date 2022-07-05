@@ -2,7 +2,7 @@
 
 [![licence mit](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/alexcamposwd/authentication-and-authorization-system/blob/main/LICENSE)
 
-### Estudo de caso e Prática pessoal.
+### Estudo de caso e prática.
 
 O estudo é um sisema de autenticação e autorização por funções (roles).
 Utilizado Docker, React.js, Typescript, Node.js, MongoDB, etc.
